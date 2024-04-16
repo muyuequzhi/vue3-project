@@ -1,0 +1,14 @@
+.common-layout {
+  height: 100%;
+  .el-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .el-menu--vertical {
+    height: 100%;
+  }
+  .el-container {
+    height: 100%;
+  }
+}

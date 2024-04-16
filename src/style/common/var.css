@@ -1,0 +1,54 @@
+:root {
+  --primary-color: #023e85;
+  --primary-click-color: #210675;
+  --primary-hover-color: #2566b2;
+  --primary-disabled-color: #8dbdf4;
+
+  --error-color: #ff4542;
+  --error-click-color: #cc3734;
+  --error-hover-color: #ffb3b4;
+
+  --success-color: #06c687;
+  --success-click-color: #049e6c;
+  --success-hover-color: #9be8cf;
+
+  --warn-color: #ffc802;
+  --warn-click-color: #cca001;
+  --warn-hover-color: #ffe999;
+
+  --bg-color: #f7f8fa;
+  --card-bg-color: #ffffff;
+  --disabled-bg-color: #f6f6f6;
+
+  --border-color: #e5e5e5;
+  --hover-bg-color: rgba(215, 229, 249, 0.5);
+  /* 蒙层 */
+  --overlay-bg-color: #333333;
+
+  /* 字体 */
+  --main-text-color: #242933;
+  --second-text-color: #3f485a;
+  --assit-text-color: #9199bd;
+  --tip-text-color: #cccccc;
+
+  /* 特殊颜色 */
+  --brand-color: #936243;
+
+  /* 字号，行高 */
+  --main-font-size: 14px;
+  --font12: 12px;
+  --font16: 16px;
+  --font20: 20px;
+  --font24: 24px;
+  --font36: 36px;
+  --font48: 20px;
+  --font56: 20px;
+  --line-heigth20: 20px;
+  --line-heigth22: 22px;
+  --line-heigth24: 24px;
+  --line-heigth28: 28px;
+  --line-heigth32: 32px;
+  --line-heigth44: 44px;
+  --line-heigth56: 56px;
+  --line-heigth64: 64px;
+}
