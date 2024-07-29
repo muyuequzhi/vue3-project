@@ -2,7 +2,7 @@ import { RouteRecordRaw } from 'vue-router'
 const constantRoutes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/test',
+    redirect: '/demo',
   },
   {
     path: '/login',
@@ -15,6 +15,20 @@ const constantRoutes: Array<RouteRecordRaw> = [
     path: '/test',
     name: 'Test',
     component: () => import('@/pages/test/index.vue'),
+    meta: { roles: [] },
+    children: [],
+  },
+  {
+    path: '/components',
+    name: 'Component',
+    component: () => import('@/pages/component/index.vue'),
+    meta: { roles: [] },
+    children: [],
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: () => import('@/pages/Demo/index.vue'),
     meta: { roles: [] },
     children: [],
   },

@@ -80,3 +80,7 @@ export const throttle = (func, wait) => {
     return result
   }
 }
+
+export const parseObj = function (obj) {
+  return JSON.parse(JSON.stringify(obj))
+}

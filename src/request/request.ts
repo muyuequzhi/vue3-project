@@ -1,6 +1,6 @@
 //导入axios
 import axios from 'axios'
-import { ElLoading } from 'element-plus'
+import { ElMessage } from 'element-plus'
 
 // const codeMessage = {
 //   200: '服务器成功返回请求数据。',
@@ -42,11 +42,19 @@ Axios.interceptors.response.use(
   function (response) {
     // 2xx 范围内的状态码都会触发该函数。
     // 对响应数据做点什么
-    switch (response.data.code) {
-      case 200:
-        'xx'
+    const code = response?.data?.code
+    if (code == 200) {
+      ElMessage({
+        message: 'This is a message.',
+      })
+    } else {
+      ElMessage({
+        message: 'This is a message.',
+        type: 'error',
+      })
     }
-    return response
+
+    return response.data
   },
   function (error) {
     // 超出 2xx 范围的状态码都会触发该函数。

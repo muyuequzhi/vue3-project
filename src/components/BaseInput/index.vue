@@ -1,32 +1,30 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+
+const emit = defineEmits(['update:modelValue'])
+
 const props = defineProps({
-  label: { type: String, required: true },
-  val: { type: String },
+  label: { type: String, required: false },
+  modelValue: { type: String },
 })
 
+const inputVal = ref('')
+
 // eslint-disable-next-line vue/no-setup-props-destructure
-const inputVal = ref(props.val)
 </script>
 
 <template>
   <div class="item-input">
-    <el-text class="mx-1">{{ label }}</el-text>
-    <el-input v-model="inputVal" placeholder="Please input" />
+    <div class="label-box">
+      <el-text class="mx-1">{{ label }}</el-text>
+    </div>
+
+    <div>
+      <el-input @change="emit('update:modelValue', inputVal)" v-model="inputVal" :value="props.modelValue" placeholder="Please input" />
+    </div>
   </div>
 </template>
 
 <style scoped>
-.el-text {
-  margin-right: 10px;
-}
-
-.el-input {
-  width: 260px;
-}
-
-.item-input {
-  display: flex;
-  align-items: center;
-}
+@import url(./index.scss);
 </style>

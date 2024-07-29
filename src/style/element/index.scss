@@ -1,7 +1,15 @@
-// @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-//   $colors: (
-//     'primary': (
-//       'base': green,
-//     ),
-//   )
-// );
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      // 'base': green,
+    ),
+  )
+);
+.el-input,
+.el-select {
+  width: 240px !important;
+  height: 32px;
+}
+.el-row {
+  margin-bottom: 20px !important;
+}

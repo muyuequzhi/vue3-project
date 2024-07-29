@@ -1,0 +1,61 @@
+* {
+  font-size: 14px;
+}
+
+.el-date-editor.el-input,
+.el-date-editor.el-input__wrapper {
+  height: 32px;
+}
+
+.el-text {
+  // position: absolute;
+  right: 0;
+  /* 默认1.5 改为1， height = font-size * line-height */
+  line-height: 1;
+  /* (32-14)/2  */
+  top: 10px;
+}
+
+.label-box {
+  max-width: 60px;
+  white-space: nowrap;
+  margin-right: 10px;
+  text-align: right;
+  height: 32px;
+  line-height: 32px;
+  position: relative;
+}
+
+.el-input {
+  width: 260px;
+}
+
+.item-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.org-plus {
+  position: absolute;
+  right: 7px;
+  top: 8px;
+}
+.input-box {
+  position: relative;
+}
+.el-form-item__error {
+  font-size: 12px;
+  padding-top: 3px;
+  display: none;
+}
+
+.input-error {
+  .el-form-item__error {
+    display: block;
+  }
+
+  .el-input {
+    border-color: red;
+  }
+}

@@ -2,7 +2,11 @@ import { MockMethod } from 'vite-plugin-mock'
 
 const tableData = () => {
   const result: any[] = []
-  for (let i = 0; i < 100; i++) {
+  const resultObj = {
+    data: <any>[],
+    total: 400,
+  }
+  for (let i = 0; i < 10; i++) {
     const obj = {
       id: i,
       col1: `col${i}`,
@@ -15,6 +19,7 @@ const tableData = () => {
     }
     result.push(obj)
   }
+  resultObj.data = result
   return result
 }
 

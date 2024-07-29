@@ -1,20 +1,17 @@
 :root {
-  --primary-color: #023e85;
-  --primary-click-color: #210675;
-  --primary-hover-color: #2566b2;
-  --primary-disabled-color: #8dbdf4;
+  --margin-bottom: 16px;
 
-  --error-color: #ff4542;
-  --error-click-color: #cc3734;
-  --error-hover-color: #ffb3b4;
+  --primary-color: #409eff;
 
-  --success-color: #06c687;
-  --success-click-color: #049e6c;
-  --success-hover-color: #9be8cf;
+  --error-color: #f56c6c;
 
-  --warn-color: #ffc802;
-  --warn-click-color: #cca001;
-  --warn-hover-color: #ffe999;
+  --success-color: #67c23a;
+
+  --warn-color: #e6a23c;
+
+  --info-color: #909399;
+
+  --border-color: #dcdfe6;
 
   --bg-color: #f7f8fa;
   --card-bg-color: #ffffff;
@@ -26,8 +23,8 @@
   --overlay-bg-color: #333333;
 
   /* 字体 */
-  --main-text-color: #242933;
-  --second-text-color: #3f485a;
+  --primary-text-color: #303133;
+  --regular-text-color: #606266;
   --assit-text-color: #9199bd;
   --tip-text-color: #cccccc;
 

@@ -1,0 +1,45 @@
+.form-row {
+  margin: 10px 0;
+}
+
+.col {
+  margin-bottom: 16px;
+}
+
+.form-box {
+  padding: 16px 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .el-row {
+    margin-bottom: 16px;
+  }
+}
+
+.col {
+  width: 33.3%;
+  margin-right: 30px;
+}
+
+.el-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.el-text {
+  margin-right: 10px;
+}
+
+.el-input {
+  width: 260px;
+}
+
+el-select {
+  width: 260px;
+}
+
+.item-input {
+  display: flex;
+  align-items: center;
+}

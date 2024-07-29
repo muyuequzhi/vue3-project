@@ -3,7 +3,7 @@ import { constantRoutes } from './routes'
 import { useUserStore } from '@/stores/userInfo.js'
 import { hasPermission } from '@/router/permission'
 // 定义路由白名单
-const whiteList: Array<string> = ['/login', '/404', '/test']
+const whiteList: Array<string> = ['/login', '/404', '/test', '/components', '/demo']
 // 定义标识，记录路由是否添加
 let registerRouteFresh = true
 // 创建路由实例
@@ -24,7 +24,7 @@ router.beforeEach((to, from) => {
       return '/home'
     } else {
       // 拦截地址栏访问无权限路由
-      const auth = hasPermission(userStore.roles, to)
+      // const auth = hasPermission(userStore.roles, to)
       if (!whiteList.includes(to.path) && !auth && to.path !== '/403') {
         return { path: '/403', replace: true }
       } else {

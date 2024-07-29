@@ -10,18 +10,27 @@ import echarts from '@/utils/echarts'
 // 引入 createPinia 函数
 import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'
-import axios from '@/request/request'
+import Axios from '@/request/request'
 // 引入mock
 import { setupProdMockServer } from '@/mock/mockProdServer'
 import * as directives from '@/directives/index.js'
+
+// element plus icon
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import 'element-plus/dist/index.css'
+
+//动画
+import 'animate.css'
+
 if (import.meta.env.MODE === 'development') {
   //dev环境开启mock
   setupProdMockServer()
 }
 // 创建 pinia 实例（根 store）
 const pinia = createPinia()
-pinia.use(piniaPersist)
+pinia.use(piniaPersist) //插件作用 把pinia存储在浏览器
 const app = createApp(App)
+
 app.config.globalProperties.$echarts = echarts
 // 注册指令
 Object.keys(directives).forEach((key) => {
@@ -33,4 +42,9 @@ app.use(pinia)
 app.use(router)
 app.mount('#app')
 //配置axios的全局引用
-app.config.globalProperties.$axios = axios
+app.config.globalProperties.$axios = { ...Axios }
+app.config.globalProperties.msg = 'global msg'
+// element plus icon
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
