@@ -6,6 +6,8 @@ import Table1 from './Table1.vue'
 import Form from './Form/index.vue'
 import Tsx from './Tsx.vue'
 import Checkbox from './Form/Checkbox.vue'
+import Jsx from './Jsx/index.vue'
+import JsxSlot from './Jsx/slot/index.jsx'
 
 const tableData = [
   {
@@ -78,36 +80,8 @@ const tableColumnProps = [
 </script>
 <template>
   <div>
-    <el-table header-row-class-name="xxx" :data="tableData" style="width: 550px">
-      <el-table-column v-for="item in tableColumnProps" :prop="item.prop" :label="item.label" :align="item.align" :sortable="item.sort" />
-      <!-- <el-table-column v-for="(item, index) in propList" :prop="item" :label="labelList[index]"
-        :sortable="sortList.includes(item)" width="180" /> -->
-
-      <!-- <el-table-column prop="date" sortable label="Date" width="180" />
-      <el-table-column prop="name" label="Name" width="180" />
-      <el-table-column prop="val" sortable label="val" width="180" /> -->
-    </el-table>
-    <BaseTable :tableData="tableData" :tableColumnProps="tableColumnProps"></BaseTable>
-    <!-- <Tsx></Tsx> -->
-    <!-- <Checkbox></Checkbox> -->
-
-    <!-- <el-date-picker v-model="data.startDate" type="date" placeholder="Pick a day" /> -->
-
-    <!-- 
-    <el-row>
-      <el-col :span="8">12</el-col>
-      <el-col :span="8">2</el-col>
-      <el-col :span="8">3</el-col>
-      <el-col :span="8">3</el-col>
-      <el-col :span="8">3</el-col>
-      <el-col :span="8">3</el-col>
-    </el-row> -->
-
-    <!-- <Form></Form> -->
-    <!-- <Table1 :tableData="tableData2"></Table1> -->
-    <div class="box-shadow-box" style="width: 500px; margin-bottom: 10px">
-      <div class="box-shadow-test">111</div>
-    </div>
+    <!-- <Jsx></Jsx> -->
+    <JsxSlot></JsxSlot>
   </div>
 </template>
 
