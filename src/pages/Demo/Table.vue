@@ -17,6 +17,8 @@ import Validate from './Validate.vue'
 import DropDown from './DropDown/index.vue'
 import autoHeightText from './autoHeightTextarea/index.vue'
 import PromiseDemo from './JavaScript/promise.vue'
+import Jsx from './Jsx/index.vue'
+import JsxSlot from './Jsx/slot/index.jsx'
 
 const selectVal = ref('1')
 // watch(selectVal, () => {
@@ -152,6 +154,7 @@ getTableData1().then((res) => {
   tableData6.value = res.data
   loading.value = false
 })
+
 
 const tableData = [
   {
@@ -327,8 +330,10 @@ const handleCurrentChange = (val: number) => {
 <template>
   <!-- <el-input v-model="text" :autosize="{ minRows: 4 }" type="textarea" style="margin-bottom: 16px;" /> -->
   <div>
+    <!-- <Jsx></Jsx> -->
+    <JsxSlot></JsxSlot>
     <!-- <autoHeightText></autoHeightText> -->
-    <PromiseDemo></PromiseDemo>
+    <!-- <PromiseDemo></PromiseDemo> -->
     <!-- <div>
       <div class="long-text" v-html="longText.replaceAll('\n', '<br>')">
 
@@ -446,6 +451,7 @@ const handleCurrentChange = (val: number) => {
     </TableTsx> -->
 
     <!-- <Validate></Validate> -->
+
   </div>
 </template>
 
