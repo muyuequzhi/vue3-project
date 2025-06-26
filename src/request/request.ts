@@ -44,9 +44,6 @@ Axios.interceptors.response.use(
     // 对响应数据做点什么
     const code = response?.data?.code
     if (code == 200) {
-      ElMessage({
-        message: 'This is a message.',
-      })
     } else {
       ElMessage({
         message: 'This is a message.',

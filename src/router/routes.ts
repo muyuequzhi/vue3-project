@@ -46,12 +46,6 @@ const constantRoutes: Array<RouteRecordRaw> = [
     meta: { roles: [] },
     children: [],
   },
-  {
-    path: '/:pathMatch(.*)*',
-    name: '',
-    component: () => import('@/pages/404/index.vue'),
-    // redirect: '/404',
-  },
 ]
 
 /**
@@ -75,12 +69,17 @@ const asyncRoutes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: '/dashboard',
-    name: '工作台',
+    path: '/vueComponent',
+    name: 'Vue组件',
     icon: 'set',
     component: () => import('@/layouts/DefaultLayout.vue'),
-    redirect: '/dashboard/paper',
     children: [
+      {
+        path: 'editor',
+        name: '富文本',
+        component: () => import('@/pages/vueComponent/editor/index.vue'),
+        meta: { roles: ['admin'] },
+      },
       {
         path: 'paper',
         name: '工作周报',
@@ -123,88 +122,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
     ],
   },
 ]
-// const menus = [
-//   {
-//     id: 1,
-//     pid: 0,
-//     path: '/receipt',
-//     name: '',
-//     component: 'layout/Layout',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '',
-//   },
-//   {
-//     id: 2,
-//     pid: 1,
-//     path: 'index',
-//     name: 'Receipt',
-//     component: 'receipt/index',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '{"title": "收款管理", "icon": "receipt"}',
-//   },
-//   {
-//     id: 3,
-//     pid: 0,
-//     path: '/payment',
-//     name: '',
-//     component: 'layout/Layout',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '',
-//   },
-//   {
-//     id: 4,
-//     pid: 3,
-//     path: 'index',
-//     name: 'Payment',
-//     component: 'payment/index',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '{"title": "付款管理", "icon": "payment"}',
-//   },
-//   {
-//     id: 5,
-//     pid: 0,
-//     path: '/crm',
-//     name: '',
-//     component: 'layout/Layout',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '',
-//   },
-//   {
-//     id: 6,
-//     pid: 5,
-//     path: 'index',
-//     name: 'Crm',
-//     component: 'crm/index',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '{"title": "客户管理", "icon": "people"}',
-//   },
-//   {
-//     id: 7,
-//     pid: 0,
-//     path: '/upload_product',
-//     name: '',
-//     component: 'layout/Layout',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '',
-//   },
-//   {
-//     id: 8,
-//     pid: 7,
-//     path: 'index',
-//     name: 'productUpload',
-//     component: 'productUpload/index',
-//     redirect: '',
-//     hidden: 'false',
-//     meta: '{"title": "测评商品上传", "icon": "upload"}',
-//   },
-// ]
+
 export { constantRoutes, asyncRoutes }
 //从vue-router扩展属性
 //RouteMeta接口来键入meta字段

@@ -47,10 +47,12 @@ const componentList = [
     name: 'form',
     tagName: 'Vue',
     describe: '表单输入绑定',
+    // show: true,
     content: defineAsyncComponent(() => {
       return import('@/pages/Demo/form.vue')
     }),
   },
+
   {
     name: 'animate',
     tagName: 'Vue',
@@ -67,6 +69,34 @@ const componentList = [
     // show: true,
     content: defineAsyncComponent(() => {
       return import('@/pages/Demo/Markdown.vue')
+    }),
+  },
+
+  {
+    name: 'Xlsx',
+    tagName: 'xlsx',
+    describe: 'xlsx',
+    // show: true,
+    content: defineAsyncComponent(() => {
+      return import('@/pages/Demo/Xlsx/index.vue')
+    }),
+  },
+  {
+    name: 'File',
+    tagName: 'File',
+    describe: 'File',
+    // show: true,
+    content: defineAsyncComponent(() => {
+      return import('@/pages/Demo/File/index.vue')
+    }),
+  },
+  {
+    name: 'GroupView',
+    tagName: 'GroupView',
+    describe: 'GroupView',
+    // show: true,
+    content: defineAsyncComponent(() => {
+      return import('@/pages/Demo/GroupView/index.vue')
     }),
   },
   {

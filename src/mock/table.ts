@@ -23,6 +23,27 @@ const tableData = () => {
   return result
 }
 
+const tableData1 = () => {
+  const result: any[] = []
+  const resultObj = {
+    data: <any>[],
+    total: 400,
+  }
+  for (let i = 1; i < 30; i++) {
+    const obj = {
+      id: i,
+      colName: 'col' + i,
+      date: i == 5 ? '-' : '2016-05-' + (i > 9 ? i : '0' + i),
+      name: 'name' + (i == 2 ? 'xxxxxxxxxxxxxxxxxxxx2' : i),
+      address: 'No. 189',
+      val: `${i == 2 ? '' : 10000 * i}`,
+    }
+    result.push(obj)
+  }
+  resultObj.data = result
+  return result
+}
+
 export default [
   {
     url: '/getTableData',
@@ -34,6 +55,19 @@ export default [
 
         msg: '',
         data: tableData,
+      }
+    },
+  },
+  {
+    url: '/getTableData1',
+    method: 'get',
+    timeout: 500,
+    response: () => {
+      return {
+        code: 200,
+
+        msg: '',
+        data: tableData1,
       }
     },
   },

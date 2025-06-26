@@ -20,7 +20,10 @@ setTimeout(() => {
     <div>slotDemo</div>
     <slot name="header" message="from child slot"></slot>
     <slot name="footer" :message="items[0]"></slot>
-    <slot>123</slot>
+    <div v-if="$slots.default" class="slot">
+      <slot></slot>
+    </div>
+
   </div>
 </template>
 

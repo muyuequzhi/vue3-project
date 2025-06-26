@@ -31,11 +31,13 @@ export default defineComponent({
       <div>
         <tsx></tsx>
         <el-checkbox-group v-model={obj.val}>
-          {radioList.map((item) => (
-            <el-checkbox label={item.value} value={item.value}>
-              {item.label}
-            </el-checkbox>
-          ))}
+          {
+            radioList.map((item) => (
+              <el-checkbox label={item.value} value={item.value}>
+                {item.label}
+              </el-checkbox>
+            ))
+          }
         </el-checkbox-group>
       </div>
     )

@@ -24,7 +24,7 @@ import 'animate.css'
 
 if (import.meta.env.MODE === 'development') {
   //dev环境开启mock
-  setupProdMockServer()
+  // setupProdMockServer()
 }
 // 创建 pinia 实例（根 store）
 const pinia = createPinia()

@@ -25,11 +25,11 @@ const formLabelAlign = reactive<RuleForm>({
 const rules = reactive<FormRules<RuleForm>>({
   username: [
     { required: true, message: 'Please input Activity name', trigger: 'blur' },
-    { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
+    { min: 6, max: 6, message: 'Length should be 6', trigger: 'blur' },
   ],
   password: [
     { required: true, message: 'Please input Activity name', trigger: 'blur' },
-    { min: 3, max: 5, message: 'Length should be 3 to 5', trigger: 'blur' },
+    { min: 6, max: 6, message: 'Length should be 6', trigger: 'blur' },
   ],
 })
 
@@ -68,22 +68,52 @@ const resetForm = (formEl: FormInstance | undefined) => {
 console.log('444', userStore)
 </script>
 <template>
-  <div class="ghghgh">login</div>
-  <el-form label-position="right" label-width="100px" ref="ruleFormRef" :model="formLabelAlign" :rules="rules" style="max-width: 460px">
-    <el-form-item label="用户名" prop="username">
-      <el-input v-model="formLabelAlign.username" placeholder="请输入用户名" />
-    </el-form-item>
-    <el-form-item label="密码" prop="password">
-      <el-input v-model="formLabelAlign.password" placeholder="请输入密码" />
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
-      <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
-    </el-form-item>
-  </el-form>
+  <div style="margin-top: 150px;">
+    <el-form label-position="right" label-width="100px" ref="ruleFormRef" :model="formLabelAlign">
+      <el-row justify="center">
+        <el-col>
+          <div style="display: flex;justify-content: center;">
+            <el-form-item label="用户名" prop="username">
+              <el-input v-model="formLabelAlign.username" placeholder="请输入用户名" />
+            </el-form-item>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col>
+          <div style="display: flex;justify-content: center;">
+            <el-form-item label="密码" prop="password">
+              <el-input @keyup.enter.native="submitForm(ruleFormRef)" v-model="formLabelAlign.password"
+                placeholder="请输入密码" />
+            </el-form-item>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col>
+          <div style="display: flex;justify-content: center;">
+            <el-form-item label=" " class="center">
+              <div style="display: flex;">
+                <el-button type="primary" @click="submitForm(ruleFormRef)">登录</el-button>
+                <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
+              </div>
+            </el-form-item>
+          </div>
+        </el-col>
+      </el-row>
+    </el-form>
+  </div>
   <!-- <div>{{ userStore.username }}</div> -->
 </template>
 
 <style scoped>
 @import './index.css';
+
+:deep(.center .el-form-item__content) {
+  justify-content: center;
+}
+
+:deep(.el-form-item__content) {
+  width: 240px;
+}
 </style>

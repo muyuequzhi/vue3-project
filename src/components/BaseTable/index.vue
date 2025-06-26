@@ -7,6 +7,7 @@ defineProps({
   tableAttr: { type: Array<any>, required: true },
   tableData: { type: Array<any>, required: true },
   radioType: { type: String, default: 'radio' },
+  test: { type: Object, default: 'radio' },
 })
 const emit = defineEmits(['changeTableData', 'changeSelIndex'])
 const currentPage4 = ref(1)
@@ -48,23 +49,20 @@ function setRowClass(data: { row: any; rowIndex: number }) {
 <template>
   <div class="item-box">
     <div class="table-box">
-      <el-table ref="table" :row-class-name="setRowClass" :data="tableData" stripe height="350" style="width: 100%" @row-click="RowClick" highlight-current-row>
+      <el-table ref="table" :row-class-name="setRowClass" :data="tableData" stripe height="350" style="width: 100%"
+        @row-click="RowClick" highlight-current-row>
         <template v-for="item in tableAttr" :key="item.id">
-          <el-table-column align="center" #default="scope" v-if="item.type == 'radio'" :width="item.width" :fixed="item.fixed ? true : false" label="请选择">
+          <el-table-column align="center" #default="scope" v-if="item.type == 'radio'" :width="item.width"
+            :fixed="item.fixed ? true : false" label="请选择">
             <RadioStyle :checked="scope.$index == radio1 ? true : false">
               <input class="el-radio__original" name="radio1" type="radio" v-model="radio1" :value="scope.$index" />
             </RadioStyle>
           </el-table-column>
-          <el-table-column
-            v-else-if="item.type == 'checkbox'"
-            type="selection"
-            :fixed="item.fixed ? true : false"
-            :prop="item.prop"
-            :label="item.label"
-            :width="item.width"
-            align="center">
+          <el-table-column v-else-if="item.type == 'checkbox'" type="selection" :fixed="item.fixed ? true : false"
+            :prop="item.prop" :label="item.label" :width="item.width" align="center">
           </el-table-column>
-          <el-table-column v-else :fixed="item.fixed ? true : false" :prop="item.prop" :label="item.label" :width="item.width" align="center">
+          <el-table-column v-else :fixed="item.fixed ? true : false" :prop="item.prop" :label="item.label"
+            :width="item.width" align="center">
           </el-table-column>
 
           <!-- <el-table-column :fixed="item.fixed ? true : false" :prop="item.prop" :label="item.label" :width="item.width"
@@ -74,17 +72,9 @@ function setRowClass(data: { row: any; rowIndex: number }) {
         </template>
       </el-table>
     </div>
-    <el-pagination
-      style="justify-content: flex-end"
-      v-model:current-page="currentPage4"
-      v-model:page-size="pageSize4"
-      :page-sizes="[10, 50, 100, 200]"
-      :small="small"
-      :disabled="disabled"
-      :background="background"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="400"
-      @size-change="handleSizeChange"
+    <el-pagination style="justify-content: flex-end" v-model:current-page="currentPage4" v-model:page-size="pageSize4"
+      :page-sizes="[10, 50, 100, 200]" :small="small" :disabled="disabled" :background="background"
+      layout="total, sizes, prev, pager, next, jumper" :total="400" @size-change="handleSizeChange"
       @current-change="handleCurrentChange" />
   </div>
 </template>
@@ -103,7 +93,7 @@ function setRowClass(data: { row: any; rowIndex: number }) {
   color: white !important;
 }
 
-.demo-pagination-block + .demo-pagination-block {
+.demo-pagination-block+.demo-pagination-block {
   margin-top: 10px;
 }
 

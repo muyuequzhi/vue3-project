@@ -84,3 +84,23 @@ export const throttle = (func, wait) => {
 export const parseObj = function (obj) {
   return JSON.parse(JSON.stringify(obj))
 }
+
+export const formatTime = (time, type) => {
+  let date = new Date(Number(time))
+
+  let dateObj = {}
+  dateObj.year = date.getFullYear()
+  dateObj.month = date.getMonth() + 1
+  dateObj.day = date.getDate()
+  dateObj.hour = date.getHours()
+  dateObj.minute = date.getMinutes()
+  dateObj.second = date.getSeconds()
+
+  let padArr = ['month', 'day', 'hour', 'minute', 'second']
+  padArr.forEach((item) => {
+    if (String(dateObj[item]).length == 1) {
+      dateObj[item] = '0' + dateObj[item]
+    }
+  })
+  return `${dateObj.year}-${dateObj.month}-${dateObj.day} ${dateObj.hour}:${dateObj.minute}:${dateObj.second}`
+}

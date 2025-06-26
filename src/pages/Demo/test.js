@@ -26,3 +26,28 @@ const obj = new Proxy(o, {
 obj.name = 1
 // obj.name = '1'
 console.log(obj)
+
+setTimeout(function () {
+  console.log(111)
+}, 100)
+setTimeout(function () {
+  console.log(222)
+}, 0)
+
+const timeFn = () =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => resolve('done'), 1000)
+  })
+const fn = async () => {
+  const result = await timeFn()
+  console.log(result)
+  console.log(222)
+  return 333
+}
+fn().then((v) => console.log(v))
+
+async function showAvatar() {
+  let res = await fetch('/article/promise-chaining/user.json')
+  console.log(res)
+}
+showAvatar()

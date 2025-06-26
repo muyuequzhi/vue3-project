@@ -61,4 +61,18 @@ git stash save '注释'
 取出暂存
 git stash pop
 
+查看文件历史记录
+git log filename
+
+查看文件每次提交的diff
+git log -p filename
+
+列出文件的所有改动历史
+git log --pretty=oneline filename
+
 ## 20240701
+
+drastically
+
+速度 伤害 生命值 恢复能力 技能
+外貌 成长过程与性格

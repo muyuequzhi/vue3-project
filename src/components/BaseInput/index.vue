@@ -8,8 +8,10 @@ const props = defineProps({
   modelValue: { type: String },
 })
 
-const inputVal = ref('')
-
+const inputVal = ref<any>('')
+const onModelValueUpdated = (val: any) => {
+  emit('update:modelValue', val)
+}
 // eslint-disable-next-line vue/no-setup-props-destructure
 </script>
 
@@ -20,7 +22,8 @@ const inputVal = ref('')
     </div>
 
     <div>
-      <el-input @change="emit('update:modelValue', inputVal)" v-model="inputVal" :value="props.modelValue" placeholder="Please input" />
+      <el-input @change="emit('update:modelValue', inputVal)" v-model="inputVal" :value="props.modelValue"
+        placeholder="Please input" />
     </div>
   </div>
 </template>

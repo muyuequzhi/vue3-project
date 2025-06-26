@@ -6,7 +6,11 @@ import SlotDemo from './SlotDemo.vue'
   <div>
     <SlotDemo #header="msg">
       <div>{{ msg }}</div>
-      <div>parent text</div>
+      <div v-if="false">parent text</div>
+      <div>111</div>
+    </SlotDemo>
+    <SlotDemo>
+      default
     </SlotDemo>
   </div>
 </template>

@@ -1,4 +1,5 @@
 import { RouteRecordRaw, RouteLocationNormalized } from 'vue-router'
+import { useUserStore } from '@/stores/userInfo.js'
 
 /**
  * @param {string} roles 用户角色
@@ -7,17 +8,17 @@ import { RouteRecordRaw, RouteLocationNormalized } from 'vue-router'
  * @description: 判断用户是否有权限访问单个路由
  */
 export const hasPermission = (roles: string[], route: RouteRecordRaw | RouteLocationNormalized) => {
-  if (route.meta && route.meta.roles) {
-    return roles.some((role) => {
-      if (route.meta?.roles !== undefined) {
-        return route.meta.roles.includes(role)
-      } else {
-        return false
-      }
-    })
-  } else {
-    return true
-  }
+  // if (route.meta && route.meta.roles) {
+  //   return roles.some((role) => {
+  //     if (route.meta?.roles !== undefined) {
+  //       return route.meta.roles.includes(role)
+  //     } else {
+  //       return false
+  //     }
+  //   })
+  // } else {
+  //   return true
+  // }
 }
 
 /**
