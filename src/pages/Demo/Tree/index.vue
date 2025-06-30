@@ -26,7 +26,7 @@ const handleNodeClick = (data: Tree) => {
 }
 
 const handleRightClick = (event, a, b, c) => {
-  console.log(event, a, b, c)
+  // console.log(event, a, b, c)
 }
 const handleClick = () => {
 
@@ -38,7 +38,6 @@ const handleClick = () => {
 }
 
 const renderContent = (h, { node, data, store }) => {
-  console.log(h, { node, data, store }, '000')
   return h('span',
     {
       class: 'custom-tree-node',
@@ -55,7 +54,6 @@ const renderContent = (h, { node, data, store }) => {
 onMounted(() => {
 
   nextTick(() => {
-    console.log(myTree.value, 777)
     if (myTree.value) {
       myTree.value.setCurrentKey('1')
     }
