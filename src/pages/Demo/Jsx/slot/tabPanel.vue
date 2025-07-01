@@ -1,5 +1,7 @@
 <script setup>
 const props = defineProps(['label', 'name'])
+const aa = '123'
+const bbb = '123'
 </script>
 
 <template>
