@@ -20,6 +20,7 @@ import PromiseDemo from './JavaScript/promise.vue'
 import Jsx from './Jsx/index.vue'
 import JsxSlot from './Jsx/slot/index.jsx'
 
+const test = 'xxx'
 const selectVal = ref('1')
 // watch(selectVal, () => {
 //   // console.log(selectVal.value)
@@ -484,5 +485,9 @@ textarea {
   resize: none;
   overflow: hidden;
   padding: 0;
+}
+
+a {
+  cursor: pointer;
 }
 </style>
