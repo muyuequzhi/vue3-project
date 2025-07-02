@@ -8,6 +8,7 @@ import Tree from '../../Tree/index.vue'
 export default defineComponent({
   setup() {
     const test = 'xxx'
+    const test1 = 'xxx'
     function renderFn(content) {
       return <p>from index || from child -- {content}</p>
     }
